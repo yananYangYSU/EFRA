@@ -1,6 +1,6 @@
 #EFRA系统功能代码
 --------------------------------------------
-java代码结构
+文件夹说明
 src---+----cluster 聚类代码
       +----collaFilter 协同过滤预测代码
 	  +----dataTransform 原始log数据转换代码
@@ -14,8 +14,12 @@ data--+----normalized.txt 归一化后的请求数量/h 文件
 	  +----symbol.txt 将请求数转化成字母表示的文件 用于周期预测
 	  +----topkcpumin.txt cpu的历史使用数据 用于协同过滤
 	  +----topklist.txt 历史请求数 用于协同过滤
-	 
-python代码结构
+loadGenerator--+----DockerService.java java的dockerApi接口类 包含查询容器资源量
+			   +----RedisDriver.java redis的负载生成类
+			   +----StartContainer.sh redis的benchmark程序开始脚本
+			   +----StopContainer.sh redis的benchmark程序停止脚本
+			   
+ 
 python+----lstm.py 用于lstm算法的python代码
       +----data.csv lstm的输入文件
 	  
