@@ -18,3 +18,5 @@ data--+----normalized.txt 归一化后的请求数量/h 文件
 python代码结构
 python+----lstm.py 用于lstm算法的python代码
       +----data.csv lstm的输入文件
+	  
+	  log数据集下载地址:http://ita.ee.lbl.gov/html/traces.html
