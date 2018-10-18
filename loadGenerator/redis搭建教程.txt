@@ -1,16 +1,17 @@
 Redis的服务端启动
 注:在每个redis节点执行以下操作
-cd /root/redis-cluster/7000
-修改redis.conf的Ip 端口 不用改 默认7000就行
-/root/redis/redis-server redis.conf
+cd /usr/local/redis-cluster/7000
+修改redis.conf的Ip和端口 不用改 默认7000就行
+/usr/local/redis/redis-server redis.conf
 
 Redis的集群创建
 注:在任意一个节点上执行如下操作
-cd /home/sdc/5/redis-4.0.9/src
-注:此处需要升级ruby版本
-ruby升级链接：https://blog.csdn.net/a515557595_xzb/article/details/78810459
+cd /usr/local/redis-cluster/bin
+  注:此处需要升级ruby版本
+  ruby升级链接：https://blog.csdn.net/a515557595_xzb/article/details/78810459
+创建集群
 ruby redis-trib.rb create --replicas 0 10.30.6.85:7000 10.30.6.86:7000 10.30.6.87:7000
  
 redis的客户端
-cd /home/sdc/5/redis-cluster-bench
+cd redis-cluster-bench
 ./redis-cluster-bench -h 10.30.6.87 -p 7000 -n 200000 -c 20 -t get --interval 1
